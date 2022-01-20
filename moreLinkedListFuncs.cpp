@@ -150,8 +150,8 @@ int sum(LinkedList * list) {
   int mySum = 0;
 
   while (temp != NULL) {
-	mySum = mySum + temp->data;
-	temp = temp->next;
+    mySum = mySum + temp->data;
+    temp = temp->next;
   }
 
   return mySum; 
