@@ -87,18 +87,23 @@ Node * pointerToMax(LinkedList *list) {
 
 Node * pointerToMin(LinkedList *list) {
 
-  // Code may assume that these assertions are true;
-  //  so does not need to do error checking for these conditions.
-
   assert(list!=NULL);
   assert(list->head != NULL);
 
-  // TODO: Insert code here to calculate and return
-  //   value of pointer to min element 
-  //   (first one such value that occurs if there are ties.)
+  Node *p = new Node;
+  p = list->head;
 
-  return NULL; // STUB!  Replace this line with correct code
+  Node *min = new Node;
+  min = list->head;
 
+  while(p != nullptr){
+    if (p->data < min->data){
+      min = p;
+    }
+    p = p->next;
+  }
+
+  return min;
 }
 
 // list: ptr to a linked list of Node (each with int data, and Node * next)
