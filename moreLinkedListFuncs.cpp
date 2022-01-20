@@ -143,11 +143,18 @@ int sum(LinkedList * list) {
   //  so does not need to do error checking for these conditions.
 
   assert(list!=NULL);
+  
+  Node *temp;
+  temp = list->head;
 
-  // TODO: Insert code here to calculate and return
-  //   sum of all values in list (0 if there are none).
+  int mySum = 0;
 
-  return -42; // STUB!  Replace this line with correct code
+  while (temp != NULL) {
+	mySum = mySum + temp->data;
+	temp = temp->next;
+  }
+
+  return mySum; 
 
 }
 
