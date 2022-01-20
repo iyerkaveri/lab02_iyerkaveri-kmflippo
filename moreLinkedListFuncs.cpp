@@ -55,15 +55,26 @@ void addIntToStartOfList(LinkedList *list, int value) {
 
 Node * pointerToMax(LinkedList *list) {
 
-  // Code may assume that these assertions are true;
-  //  so does not need to do error checking for these conditions.
   assert(list!=NULL);
   assert(list->head != NULL);
 
-  // TODO: Insert code here to calculate and return
-  //   value of pointer to max element (first one if ties.)
+  
+  Node *temp;
+  temp = new Node;
+  temp = list->head;
 
-  return NULL; // STUB!  Replace this line with correct code
+  Node *max;
+  max = new Node;
+  max = list->head;
+
+  while (temp != nullptr) {
+	if (temp->data > max->data) {
+		max = temp;
+	}
+	temp = temp->next;
+  }
+
+  return max; 
 }
 
 // list: ptr to a linked list of Node (each with int data, and Node * next)
