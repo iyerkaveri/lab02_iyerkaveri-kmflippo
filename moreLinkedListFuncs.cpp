@@ -9,28 +9,19 @@ void addIntToEndOfList(LinkedList *list, int value) {
 
   Node *p; // temporary pointer
 
-  // TODO:
-  // (1) Allocate a new node.  p will point to it.
+  p = new Node;
 
-  p = NULL; // THIS IS PLACE-HOLDER LINE OF CODE.  DELETE IT AND REPLACE IT.
-
-  // (2) Set p's data field to the value passed in
-  
-  // (3) Set p's next field to NULL
-
+  p->data = value;
+  p->next = NULL;
 
   if (list->head == NULL) {
-
-    // (4) Make both head and tail of this list point to p
+	list->head = p;
+	list->tail = p;
     
     
   } else {
-
-    // Add p at the end of the list.   
-
-    // (5) The current node at the tail? Make it point to p instead of NULL
-
-    // (6) Make the tail of the list be p now.
+	list->tail->next = p;
+	list->tail = p;
 
   }
 
