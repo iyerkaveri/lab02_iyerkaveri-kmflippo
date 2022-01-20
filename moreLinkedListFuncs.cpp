@@ -1,3 +1,6 @@
+// Kavi Iyer and Kelly Flippo
+//  5590831        5106695
+
 #include <cassert>
 #include "linkedList.h"
 #include "linkedListFuncs.h"
@@ -28,19 +31,18 @@ void addIntToEndOfList(LinkedList *list, int value) {
 }
 
 void addIntToStartOfList(LinkedList *list, int value) {
-  assert(list!=NULL); // if list is NULL, we can do nothing.
+  assert(list!=NULL); 
 
-  // Add code for this.  
-  // HINTS:
-  //  You will need to allocate a new Node.
-  //  You will need two cases just as in addIntToEndOfList,
-  //  one for when list->head is NULL and another for when it is not.
-  // You need to consider how to make sure that list->head changes to point to the new node
-  // that you allocated.  And you will need to make sure that when you are done, 
-  // that if the new node is now the ONLY thing on the list, that tail points to it also,
-  // and that the new node is pointing to NULL.
-  // Otherwise, you'll need to be sure that 
-  //   if it is the only node on the list, or to the "old" head if there 
+  Node *p = new Node;
+  p->data = value;
+
+  if (list->head == NULL){
+    list->head = p;
+    list->tail = p;
+  } else {
+    p->next = list->head;
+    list->head = p;
+  }
 
 }
 
